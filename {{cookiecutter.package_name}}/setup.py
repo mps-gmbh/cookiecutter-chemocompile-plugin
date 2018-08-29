@@ -1,9 +1,18 @@
 import setuptools
 
+kwargs = {
+    "version": "{{ cookiecutter.package_version }}",
+}
+
+# get the dependencies and installs
+with open(path.join(here, 'requirements.txt'), encoding='utf-8') as f:
+    all_reqs = f.read().split('\n')
+
+install_requires = [x.strip() for x in all_reqs if 'git+' not in x]
+
 setuptools.setup(
     name="{{ cookiecutter.package_name }}",
     version="{{ cookiecutter.package_version }}",
-    url="{{ cookiecutter.package_url }}",
 
     author="{{ cookiecutter.author_name }}",
     author_email="{{ cookiecutter.author_email }}",
@@ -13,15 +22,14 @@ setuptools.setup(
 
     packages=setuptools.find_packages(),
 
-    install_requires=[],
+    install_requires=install_requires,
 
     classifiers=[
-        'Development Status :: 2 - Pre-Alpha',
+        'Development Status :: 5 - Production/Stable',
+        'Intended Audience :: Healthcare Industry',
         'Programming Language :: Python',
         'Programming Language :: Python :: 2',
         'Programming Language :: Python :: 2.7',
-        'Programming Language :: Python :: 3',
-        'Programming Language :: Python :: 3.4',
-        'Programming Language :: Python :: 3.5',
     ],
+    **kwargs
 )
