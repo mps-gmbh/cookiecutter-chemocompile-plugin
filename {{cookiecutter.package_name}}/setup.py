@@ -1,8 +1,11 @@
 import setuptools
+from os import path
 
 kwargs = {
     "version": "{{ cookiecutter.package_version }}",
 }
+
+here = path.abspath(path.dirname(__file__))
 
 # get the dependencies and installs
 with open(path.join(here, 'requirements.txt'), encoding='utf-8') as f:
@@ -31,5 +34,11 @@ setuptools.setup(
         'Programming Language :: Python :: 2',
         'Programming Language :: Python :: 2.7',
     ],
+
+    entry_points={
+        'chemocompile_plugin': [
+            '{{ cookiecutter.package_name }}={{ cookiecutter.package_name }}:register_plugin'
+        ],
+    },
     **kwargs
 )
