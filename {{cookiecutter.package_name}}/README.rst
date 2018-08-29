@@ -1,5 +1,5 @@
-{{ cookiecutter.package_name }}
-{{ cookiecutter.package_name|count * "=" }}
+{{ cookiecutter.package_slug }}
+{{ cookiecutter.package_slug|count * "=" }}
 
 {{ cookiecutter.package_description }}
 
@@ -21,4 +21,4 @@ Licence
 Authors
 -------
 
-`{{ cookiecutter.package_name }}` was written by `{{ cookiecutter.author_name }} <{{ cookiecutter.author_email }}>`_.
+`{{ cookiecutter.package_slug }}` was written by `{{ cookiecutter.author_name }} <{{ cookiecutter.author_email }}>`_.

@@ -37,7 +37,7 @@ setuptools.setup(
 
     entry_points={
         'chemocompile_plugin': [
-            '{{ cookiecutter.package_name }}={{ cookiecutter.package_name }}:register_plugin'
+            '{{ cookiecutter.package_name }}={{ cookiecutter.package_slug }}:register_plugin'
         ],
     },
     **kwargs
