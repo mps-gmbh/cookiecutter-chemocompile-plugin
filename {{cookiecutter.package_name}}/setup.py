@@ -18,11 +18,9 @@ install_requires = [x.strip() for x in all_reqs if "git+" not in x]
 
 setuptools.setup(
     name="{{ cookiecutter.package_name }}",
-    version="{{ cookiecutter.package_version }}",
     author="{{ cookiecutter.author_name }}",
     author_email="{{ cookiecutter.author_email }}",
     description="{{ cookiecutter.package_description }}",
-    long_description=open("README.rst").read(),
     packages=setuptools.find_packages(),
     install_requires=install_requires,
     classifiers=[
