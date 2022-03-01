@@ -2,7 +2,7 @@
     "author_name": "MPS GmbH",
     "author_email": "info@mps-med.de",
 
-    "package_name": "generic_chemocompile_plugin",
+    "package_name": "generic-chemocompile-plugin",
     "package_slug": "{{ cookiecutter.package_name|lower|replace('-', '_') }}",
     "package_version": "0.1.0",
     "package_description": "A blueprint for a ChemoCompile plugin."
